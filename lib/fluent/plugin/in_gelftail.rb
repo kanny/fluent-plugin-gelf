@@ -2,7 +2,7 @@ module Fluent
 
 class GELFTailInput < TailInput
 
-  Plugin.register_input("gelftail", self)
+  Fluent::Plugin.register_input("gelftail", self)
 
   # gelfhost parameter:
   #   nil (default)     auto-add our hostname unless "host" is parsed from file

@@ -2,7 +2,7 @@ module Fluent
 
 class GELF2FileOutput < BufferedOutput
 
-  Plugin.register_output("gelf2file", self)    
+  Fluent::Plugin.register_output("gelf2file", self)
 
   config_param :file_time_format, :string, :default => '%Y%m%d'
   config_param :path, :string, :default => nil

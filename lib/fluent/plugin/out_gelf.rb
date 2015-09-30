@@ -2,7 +2,7 @@ module Fluent
 
 class GELFOutput < BufferedOutput
 
-  Plugin.register_output("gelf", self)    
+  Fluent::Plugin.register_output("gelf", self)
 
   config_param :use_record_host, :bool, :default => false
   config_param :add_msec_time, :bool, :default => false
@@ -61,7 +61,7 @@ class GELFOutput < BufferedOutput
         end
       when 'msec' then
         # msec must be three digits (leading/trailing zeroes)
-        if @add_msec_time then 
+        if @add_msec_time then
           gelfentry[:timestamp] = (time.to_s + "." + v).to_f
         else
           gelfentry[:_msec] = v
